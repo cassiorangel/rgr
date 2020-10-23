@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rgr"
+    }
+  },
+  "defaultProject": "rgr",
+  "cli": {
+    "analytics": "9e4eb7a9-7200-419e-adc3-28aec6fe9391"
+  }
 }
