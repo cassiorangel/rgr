@@ -1,12 +1,12 @@
 <div class="row" style="margin-top: 20px;">
     <div class="col-sm-4" *ngFor="let user of usersList" style="margin-top: 20px;">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header destaque">
                 Dados usuário
             </div>
             <div class="card-body">
-                <h5 class="card-title">Nome: {{ user.name }}</h5>
-                <p class="card-text espaco">Email: {{ user.email }}</p>
+                <p class="card-title"><span class="destaque">Nome:</span> {{ user.name }}</p>
+                <p class="card-text espaco"><span class="destaque">Email:</span> {{ user.email }}</p>
                 <button type="button" class="btn btn-dark btn-sm bt" (click)="maisDetales(user.id)">Detalhes</button>
             </div>
         </div>
