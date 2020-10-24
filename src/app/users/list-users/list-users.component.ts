@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-list-users',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUsersComponent implements OnInit {
 
-  constructor() { }
+  usersList: any;
+
+  constructor(
+    private usersSrvice: UsersService
+  ) { }
 
   ngOnInit(): void {
+    this.listUsers();
+  }
+  public listUsers() {
+    this.usersSrvice.getUsers()
+      .then((res: any) => {
+        this.usersList = res;
+        console.log(res)
+      })
+      .catch((error) => {
+        console.log("Promise rejected with " + JSON.stringify(error.message));
+      });
   }
 
+  public maisDetales(id) {
+    console.log(id)
+  }
 }
