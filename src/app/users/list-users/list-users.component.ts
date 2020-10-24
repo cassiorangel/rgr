@@ -15,7 +15,7 @@ export class ListUsersComponent implements OnInit {
   usersList: any;
 
   constructor(
-    private usersSrvice: UsersService,
+    private usersService: UsersService,
     private modalService: BsModalService
   ) { }
 
@@ -23,7 +23,7 @@ export class ListUsersComponent implements OnInit {
     this.listUsers();
   }
   public listUsers() {
-    this.usersSrvice.getUsers()
+    this.usersService.getUsers()
       .then((res: any) => {
         this.usersList = res;
         console.log(res)
@@ -34,8 +34,14 @@ export class ListUsersComponent implements OnInit {
   }
 
   public maisDetales(id) {
-    this.bsModalRef = this.modalService.show(ModalDetailComponent, { class: 'gray modal-lg' });
-    console.log(id)
 
+    this.usersService.detailUser(id).then(res => {
+      this.bsModalRef = this.modalService.show(ModalDetailComponent, { class: 'gray modal-lg' });
+      this.bsModalRef.content.name = res['name']
+      this.bsModalRef.content.closeBtnName = 'Fechar';
+    })
+    .catch((error) => {
+      console.log("Promise rejected with " + JSON.stringify(error.message));
+    });
   }
 }

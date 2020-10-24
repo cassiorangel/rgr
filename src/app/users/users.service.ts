@@ -13,8 +13,12 @@ export class UsersService {
     private http: HttpClient
   ) { }
 
-  getUsers() {
+  public getUsers() {
     return this.http.get(this.API_USERS)
+      .toPromise()
+  }
+  public detailUser(id: number) {
+    return this.http.get(this.API_USERS + '/' + id)
       .toPromise()
   }
 }
