@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { ListUsersComponent } from './list-users/list-users.component';
-import { DetailUsersComponent } from './detail-users/detail-users.component';
 
 
 @NgModule({
-  declarations: [ListUsersComponent, DetailUsersComponent],
+  declarations: [ListUsersComponent],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    ModalModule.forRoot()
   ]
 })
 export class UsersModule { }

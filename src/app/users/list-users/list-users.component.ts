@@ -11,7 +11,7 @@ export class ListUsersComponent implements OnInit {
   usersList: any;
 
   constructor(
-    private usersSrvice: UsersService
+    private usersSrvice: UsersService,
   ) { }
 
   ngOnInit(): void {
@@ -30,5 +30,6 @@ export class ListUsersComponent implements OnInit {
 
   public maisDetales(id) {
     console.log(id)
+
   }
 }
