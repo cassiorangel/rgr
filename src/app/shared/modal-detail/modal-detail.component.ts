@@ -9,7 +9,6 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class ModalDetailComponent implements OnInit {
 
-  
   @Input() name: string;
   @Input() closeBtnName: string;
 

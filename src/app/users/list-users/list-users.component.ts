@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalDetailComponent } from 'src/app/shared/modal-detail/modal-detail.component';
 
 @Component({
   selector: 'app-list-users',
@@ -8,10 +10,13 @@ import { UsersService } from '../users.service';
 })
 export class ListUsersComponent implements OnInit {
 
+  bsModalRef: BsModalRef;
+
   usersList: any;
 
   constructor(
     private usersSrvice: UsersService,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +34,7 @@ export class ListUsersComponent implements OnInit {
   }
 
   public maisDetales(id) {
+    this.bsModalRef = this.modalService.show(ModalDetailComponent, { class: 'gray modal-lg' });
     console.log(id)
 
   }
