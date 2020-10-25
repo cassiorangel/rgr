@@ -36,12 +36,17 @@ export class ListUsersComponent implements OnInit {
   public maisDetales(id) {
 
     this.usersService.detailUser(id).then(res => {
-      this.bsModalRef = this.modalService.show(ModalDetailComponent, { class: 'gray modal-lg' });
+      this.bsModalRef = this.modalService.show(ModalDetailComponent);
       this.bsModalRef.content.name = res['name']
       this.bsModalRef.content.closeBtnName = 'Fechar';
+      this.bsModalRef.content.telefone = res['phone'];
+      this.bsModalRef.content.empresa = res['company']['name'];
+      this.bsModalRef.content.site = res['website'];
+      this.bsModalRef.content.geoLat = res['address']['geo']['lat'];
+      this.bsModalRef.content.geoLog = res['address']['geo']['lng'];
     })
-    .catch((error) => {
-      console.log("Promise rejected with " + JSON.stringify(error.message));
-    });
+      .catch((error) => {
+        console.log("Promise rejected with " + JSON.stringify(error.message));
+      });
   }
 }

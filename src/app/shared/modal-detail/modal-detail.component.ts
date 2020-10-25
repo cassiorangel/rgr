@@ -11,7 +11,13 @@ export class ModalDetailComponent implements OnInit {
 
   @Input() name: string;
   @Input() closeBtnName: string;
-
+  @Input() telefone: string;
+  @Input() site: string;
+  @Input() empresa: string;
+  @Input() geoLat: string;
+  @Input() geoLog: string;
+  
+  
   lat = 28.704060;
   long = 77.102493;
   googleMapType = 'satellite';
