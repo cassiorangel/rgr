@@ -17,6 +17,12 @@ SA
     
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <agm-map [latitude]='lat' [longitude]='long' [mapTypeId]='googleMapType'>
+            </agm-map>
+        </div>
+    </div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-dark" (click)="onClose()">

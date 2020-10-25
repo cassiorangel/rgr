@@ -12,6 +12,10 @@ export class ModalDetailComponent implements OnInit {
   @Input() name: string;
   @Input() closeBtnName: string;
 
+  lat = 28.704060;
+  long = 77.102493;
+  googleMapType = 'satellite';
+
   constructor(
     public bsModalRef: BsModalRef
   ) { }
