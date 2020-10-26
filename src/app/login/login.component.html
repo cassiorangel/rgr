@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="">
+
+            <form [formGroup]="profileForm" (ngSubmit)="login()" class="ajuste">
+                <div class="alert alert-danger" role="alert" *ngIf="message">
+                    {{ message }}
+                    <button type="button" class="close" (click)="fecha()" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="form-group" [ngClass]="{ 'has-error': submitted && f.userid.errors }">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" aria-describedby="emailHelp" formControlName="user"
+                        placeholder="Enter email">
+                    <div *ngIf="submitted && f.userid.errors" class="help-block">
+                        <div *ngIf="f.userid.errors.required">Userid is required</div>
+                    </div>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                    <div *ngIf="submitted && f.password.errors" class="help-block">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Logar</button>
+            </form>
+        </div>
+    </div>
+</div>
