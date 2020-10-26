@@ -3,12 +3,7 @@
         <div class="">
 
             <form [formGroup]="profileForm" (ngSubmit)="login()" class="ajuste">
-                <div class="alert alert-danger" role="alert" *ngIf="message">
-                    {{ message }}
-                    <button type="button" class="close" (click)="fecha()" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                <p class="tela">Tela de login</p>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
                     <input type="email" class="form-control" aria-describedby="emailHelp" formControlName="user"
